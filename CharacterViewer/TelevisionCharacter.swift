@@ -17,16 +17,14 @@ struct TopLevelDictionary: Decodable {
 }
 
 struct TelevisionCharacter: Decodable {
-    var title: String
-    var description: String
+    var text: String
     let icon: Icon?
     var imageURLString: String? {
         return icon?.urlString
     }
     
     enum CodingKeys: String, CodingKey {
-        case title = "Result"
-        case description = "Text"
+        case text = "Text"
         case icon = "Icon"
     }
 }

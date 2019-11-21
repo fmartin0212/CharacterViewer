@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RLw-qQ-LoV">
-    <device id="retina6_1" orientation="portrait">
+    <device id="ipad12_9rounded" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,27 +15,27 @@
             <objects>
                 <viewController storyboardIdentifier="CharacterListViewController" id="BYZ-38-t0r" customClass="CharacterListViewController" customModule="CharacterViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UW4-qW-7sI">
-                                <rect key="frame" x="0.0" y="27" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="27" width="409.5" height="1366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="mr2-wo-hNj">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="409.5" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CharacterCell" textLabel="7TP-46-1rs" style="IBUITableViewCellStyleDefault" id="HCz-5f-QDp">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="409.5" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HCz-5f-QDp" id="Tug-FR-jFN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="409.5" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7TP-46-1rs">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="379.5" height="51.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -99,17 +99,17 @@
                                 <exclude reference="Vvy-Yc-14P"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9Bx-1F-JzH"/>
+                                <exclude reference="8Hu-Cs-giR"/>
+                                <exclude reference="N8J-VC-5L0"/>
+                                <exclude reference="Ogf-Ra-luI"/>
+                                <exclude reference="okj-SW-s2e"/>
                                 <exclude reference="TKY-1q-r9o"/>
                                 <exclude reference="deX-hc-bJG"/>
                                 <exclude reference="tXG-gK-vPo"/>
                                 <exclude reference="L2K-WI-arj"/>
                                 <exclude reference="jno-aq-gkg"/>
                                 <exclude reference="xrk-de-dXE"/>
-                                <exclude reference="9Bx-1F-JzH"/>
-                                <exclude reference="8Hu-Cs-giR"/>
-                                <exclude reference="N8J-VC-5L0"/>
-                                <exclude reference="Ogf-Ra-luI"/>
-                                <exclude reference="okj-SW-s2e"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -123,22 +123,25 @@
                                 <include reference="Vvy-Yc-14P"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="9Bx-1F-JzH"/>
+                                <include reference="N8J-VC-5L0"/>
+                                <include reference="RA8-ms-8KT"/>
+                                <include reference="okj-SW-s2e"/>
                                 <include reference="TKY-1q-r9o"/>
                                 <include reference="deX-hc-bJG"/>
                                 <include reference="tXG-gK-vPo"/>
                                 <include reference="L2K-WI-arj"/>
                                 <include reference="jno-aq-gkg"/>
                                 <exclude reference="xrk-de-dXE"/>
-                                <include reference="9Bx-1F-JzH"/>
-                                <include reference="N8J-VC-5L0"/>
-                                <include reference="RA8-ms-8KT"/>
-                                <include reference="okj-SW-s2e"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="V78-76-af8"/>
                     <connections>
+                        <outlet property="characterDescriptionLabel" destination="jXv-UO-sa9" id="in7-7D-pJM"/>
                         <outlet property="characterDetailStackView" destination="Vvy-Yc-14P" id="ddH-7j-lEM"/>
+                        <outlet property="characterImageView" destination="qfj-Cm-NfT" id="HoQ-DF-mZ2"/>
+                        <outlet property="characterTitleLabel" destination="RaW-rV-MZG" id="9cy-6P-yqK"/>
                         <outlet property="searchBar" destination="mr2-wo-hNj" id="1al-eD-G1D"/>
                         <outlet property="tableView" destination="UW4-qW-7sI" id="SHV-CD-c3H"/>
                     </connections>
@@ -153,7 +156,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RLw-qQ-LoV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7VC-Yx-VVZ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -165,12 +168,12 @@
             </objects>
             <point key="canvasLocation" x="138.8671875" y="109.80966325036603"/>
         </scene>
-        <!--View Controller-->
+        <!--Character Detail View Controller-->
         <scene sceneID="vco-Jd-xX4">
             <objects>
-                <viewController storyboardIdentifier="CharacterDetailViewController" id="3UM-as-esa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CharacterDetailViewController" id="3UM-as-esa" customClass="CharacterDetailViewController" customModule="CharacterViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Gs-yd-F86">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKR-Th-zqm">
@@ -187,13 +190,15 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tv-4W-dnG">
                                                         <rect key="frame" x="0.0" y="458" width="414" height="25.5"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2F-L5-NPD">
                                                         <rect key="frame" x="0.0" y="493.5" width="414" height="389.5"/>
-                                                        <mutableString key="text">ally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longHHEE</mutableString>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <string key="text">ally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longally long descriptionMy really long descriptionMy really long descriptionMy really long descriptionMy really longHHEE</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -296,12 +301,12 @@
                                 <exclude reference="hKR-Th-zqm"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Wy7-zh-aCt"/>
                                 <exclude reference="UKR-fA-q97"/>
                                 <exclude reference="fQv-Vy-5K7"/>
                                 <exclude reference="Hsa-VJ-bzO"/>
                                 <exclude reference="I2H-1o-FjV"/>
                                 <exclude reference="x8I-Hq-qRy"/>
+                                <exclude reference="Wy7-zh-aCt"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -309,15 +314,20 @@
                                 <include reference="hKR-Th-zqm"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Wy7-zh-aCt"/>
                                 <include reference="UKR-fA-q97"/>
                                 <include reference="fQv-Vy-5K7"/>
                                 <include reference="Hsa-VJ-bzO"/>
                                 <include reference="I2H-1o-FjV"/>
                                 <include reference="x8I-Hq-qRy"/>
+                                <include reference="Wy7-zh-aCt"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="characterDescriptionLabel" destination="d2F-L5-NPD" id="faX-Ed-KHp"/>
+                        <outlet property="characterImageView" destination="FTv-TQ-Zgb" id="Sh9-ZA-Crt"/>
+                        <outlet property="characterTitleLabel" destination="3Tv-4W-dnG" id="cjV-ka-BOn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yft-xL-uJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

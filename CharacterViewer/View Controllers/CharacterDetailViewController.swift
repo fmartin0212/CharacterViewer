@@ -8,9 +8,15 @@
 
 import UIKit
 
-class RCharacterDetailViewController: UIViewController {
+class CharacterDetailViewController: UIViewController {
 
+    @IBOutlet weak var characterImageView: UIImageView!
+    @IBOutlet weak var characterTitleLabel: UILabel!
+    @IBOutlet weak var characterDescriptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
 }

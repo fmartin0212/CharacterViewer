@@ -15,7 +15,9 @@ class CharacterListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var characterDetailStackView: UIStackView!
-    
+    @IBOutlet weak var characterImageView: UIImageView!
+    @IBOutlet weak var characterTitleLabel: UILabel!
+    @IBOutlet weak var characterDescriptionLabel: UILabel!
     var televisionCharacterEndpoint: TelevisionCharacterAPIEndPoint?
     var characters = [TelevisionCharacter]()
     var characterManager = TelevisionCharacterManager(networkManager: NetworkManager())
@@ -31,13 +33,15 @@ class CharacterListViewController: UIViewController {
             case .success(let chars):
                 self.characters = chars
                 DispatchQueue.main.async { [weak self] in
+                    let viewModel = CharacterDetailViewModel(model: self!.characters.first!)
+                    print(viewModel.title)
+                    print(viewModel.description)
                     self?.tableView.reloadData()
                 }
             case .failure(_):
                 return
             }
         }
-        
     }
 }
 
@@ -49,7 +53,8 @@ extension CharacterListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath)
         let character = characters[indexPath.row]
-        cell.textLabel?.text = character.description
+        let characterDetailViewModel = CharacterDetailViewModel(model: character)
+        cell.textLabel?.text = characterDetailViewModel.title
         return cell
     }
 }

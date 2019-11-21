@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B72F0F5B23874C71002148CE /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72F0F5A23874C71002148CE /* CharacterDetailViewModel.swift */; };
+		B72F0F5C23874C71002148CE /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72F0F5A23874C71002148CE /* CharacterDetailViewModel.swift */; };
+		B72F0F5D23874C71002148CE /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72F0F5A23874C71002148CE /* CharacterDetailViewModel.swift */; };
 		B77BE27723860F8F00779BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE27623860F8F00779BE4 /* AppDelegate.swift */; };
 		B77BE27C23860F8F00779BE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27A23860F8F00779BE4 /* Main.storyboard */; };
 		B77BE27E23860F9300779BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27D23860F9300779BE4 /* Assets.xcassets */; };
@@ -67,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B72F0F5A23874C71002148CE /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		B77BE27323860F8F00779BE4 /* CharacterViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharacterViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77BE27623860F8F00779BE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B77BE27B23860F8F00779BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			children = (
 				B77BE2F923871D6700779BE4 /* View Controllers */,
 				B77BE2F023862A5C00779BE4 /* TelevisionCharacter.swift */,
+				B72F0F5A23874C71002148CE /* CharacterDetailViewModel.swift */,
 				B77BE2F4238632F400779BE4 /* TelevisionCharacterManager.swift */,
 				B77BE2E4238622DD00779BE4 /* NetworkManager.swift */,
 				B77BE2F823871CAC00779BE4 /* Resources */,
@@ -482,6 +487,7 @@
 				B77BE2ED238623D600779BE4 /* CharacterDetailViewController.swift in Sources */,
 				B77BE2E9238623CA00779BE4 /* CharacterListViewController.swift in Sources */,
 				B77BE2F5238632F400779BE4 /* TelevisionCharacterManager.swift in Sources */,
+				B72F0F5B23874C71002148CE /* CharacterDetailViewModel.swift in Sources */,
 				B77BE27723860F8F00779BE4 /* AppDelegate.swift in Sources */,
 				B77BE2F123862A5C00779BE4 /* TelevisionCharacter.swift in Sources */,
 				B77BE2FB23872B1100779BE4 /* Extensions.swift in Sources */,
@@ -504,6 +510,7 @@
 				B77BE2EE238623D600779BE4 /* CharacterDetailViewController.swift in Sources */,
 				B77BE2EA238623CA00779BE4 /* CharacterListViewController.swift in Sources */,
 				B77BE2F6238632F400779BE4 /* TelevisionCharacterManager.swift in Sources */,
+				B72F0F5C23874C71002148CE /* CharacterDetailViewModel.swift in Sources */,
 				B77BE2A123861F9300779BE4 /* AppDelegate.swift in Sources */,
 				B77BE2F223862A5C00779BE4 /* TelevisionCharacter.swift in Sources */,
 				B77BE2FC23872B1100779BE4 /* Extensions.swift in Sources */,
@@ -526,6 +533,7 @@
 				B77BE2EF238623D600779BE4 /* CharacterDetailViewController.swift in Sources */,
 				B77BE2EB238623CA00779BE4 /* CharacterListViewController.swift in Sources */,
 				B77BE2F7238632F400779BE4 /* TelevisionCharacterManager.swift in Sources */,
+				B72F0F5D23874C71002148CE /* CharacterDetailViewModel.swift in Sources */,
 				B77BE2C723861FE200779BE4 /* AppDelegate.swift in Sources */,
 				B77BE2F323862A5C00779BE4 /* TelevisionCharacter.swift in Sources */,
 				B77BE2FD23872B1100779BE4 /* Extensions.swift in Sources */,
