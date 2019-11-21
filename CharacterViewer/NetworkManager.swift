@@ -9,7 +9,7 @@
 import Foundation
 
 protocol NetworkManaging: class {
-    func fetchObjects<T: Decodable>(fromURL url: URL, completion: @escaping ([T]?) -> Void)
+    func fetchObjects(fromURL url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
 //protocol NetworkSession {
@@ -29,20 +29,20 @@ protocol NetworkManaging: class {
 //    }
 //}
 
+enum NetworkError: Error {
+    case generic
+    case corruptedData
+    case apiError(Error)
+}
+
 class NetworkManager: NetworkManaging {
-    func fetchObjects<T: Decodable>(fromURL url: URL, completion: @escaping ([T]?) -> Void) {
+    func fetchObjects(fromURL url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
-                print(error)
+                completion(.failure(.apiError(error)))
             }
-            guard let data = data else { completion(nil) ; return }
-            do {
-                let objects = try JSONDecoder().decode([T].self, from: data)
-                completion(objects)
-            } catch {
-                print(error)
-                completion(nil)
-            }
+            guard let data = data else { completion(.failure(.corruptedData)) ; return }
+            completion(.success(data))
         }
         dataTask.resume()
     }
