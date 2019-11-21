@@ -8,10 +8,6 @@
 
 import UIKit
 
-extension Bundle {
-    static let characterViewer = Bundle(identifier: "com.FrankMartin.CharacterViewer")
-}
-
 extension UIStoryboard {
-    static let characterViewerMain = UIStoryboard(name: "Main", bundle: Bundle.characterViewer)
+    static let characterViewerMain = UIStoryboard(name: "Main", bundle: nil)
 }

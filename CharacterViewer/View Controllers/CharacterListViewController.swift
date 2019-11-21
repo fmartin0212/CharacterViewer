@@ -55,5 +55,11 @@ extension CharacterListViewController: UITableViewDataSource {
 }
 
 extension CharacterListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let traits = self.traitCollection.horizontalSizeClass
+        if traits == .compact {
+            let vc = UIStoryboard.characterViewerMain.instantiateViewController(withIdentifier: "CharacterDetailViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

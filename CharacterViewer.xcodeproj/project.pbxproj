@@ -39,6 +39,7 @@
 		B77BE2FB23872B1100779BE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2FA23872B1100779BE4 /* Extensions.swift */; };
 		B77BE2FC23872B1100779BE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2FA23872B1100779BE4 /* Extensions.swift */; };
 		B77BE2FD23872B1100779BE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2FA23872B1100779BE4 /* Extensions.swift */; };
+		B7BB8808238740C500E4B906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27A23860F8F00779BE4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -457,6 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7BB8808238740C500E4B906 /* Main.storyboard in Resources */,
 				B77BE2D123861FE300779BE4 /* LaunchScreen.storyboard in Resources */,
 				B77BE2CE23861FE300779BE4 /* Assets.xcassets in Resources */,
 			);
@@ -869,7 +871,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W53Z73CT67;
 				INFOPLIST_FILE = TheWireCharacterViewer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = I;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -888,7 +889,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W53Z73CT67;
 				INFOPLIST_FILE = TheWireCharacterViewer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = I;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
