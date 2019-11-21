@@ -33,6 +33,9 @@
 		B77BE2F123862A5C00779BE4 /* MovieCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F023862A5C00779BE4 /* MovieCharacter.swift */; };
 		B77BE2F223862A5C00779BE4 /* MovieCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F023862A5C00779BE4 /* MovieCharacter.swift */; };
 		B77BE2F323862A5C00779BE4 /* MovieCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F023862A5C00779BE4 /* MovieCharacter.swift */; };
+		B77BE2F5238632F400779BE4 /* CharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F4238632F400779BE4 /* CharacterManager.swift */; };
+		B77BE2F6238632F400779BE4 /* CharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F4238632F400779BE4 /* CharacterManager.swift */; };
+		B77BE2F7238632F400779BE4 /* CharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F4238632F400779BE4 /* CharacterManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,7 @@
 		B77BE2E8238623CA00779BE4 /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		B77BE2EC238623D600779BE4 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		B77BE2F023862A5C00779BE4 /* MovieCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCharacter.swift; sourceTree = "<group>"; };
+		B77BE2F4238632F400779BE4 /* CharacterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 				B77BE27F23860F9300779BE4 /* LaunchScreen.storyboard */,
 				B77BE28223860F9300779BE4 /* Info.plist */,
 				B77BE2E4238622DD00779BE4 /* NetworkManager.swift */,
+				B77BE2F4238632F400779BE4 /* CharacterManager.swift */,
 			);
 			path = CharacterViewer;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				B77BE2E5238622DD00779BE4 /* NetworkManager.swift in Sources */,
 				B77BE2ED238623D600779BE4 /* CharacterDetailViewController.swift in Sources */,
 				B77BE2E9238623CA00779BE4 /* CharacterListViewController.swift in Sources */,
+				B77BE2F5238632F400779BE4 /* CharacterManager.swift in Sources */,
 				B77BE27723860F8F00779BE4 /* AppDelegate.swift in Sources */,
 				B77BE2F123862A5C00779BE4 /* MovieCharacter.swift in Sources */,
 			);
@@ -473,6 +479,7 @@
 				B77BE2E6238622DD00779BE4 /* NetworkManager.swift in Sources */,
 				B77BE2EE238623D600779BE4 /* CharacterDetailViewController.swift in Sources */,
 				B77BE2EA238623CA00779BE4 /* CharacterListViewController.swift in Sources */,
+				B77BE2F6238632F400779BE4 /* CharacterManager.swift in Sources */,
 				B77BE2A123861F9300779BE4 /* AppDelegate.swift in Sources */,
 				B77BE2F223862A5C00779BE4 /* MovieCharacter.swift in Sources */,
 			);
@@ -493,6 +500,7 @@
 				B77BE2E7238622DD00779BE4 /* NetworkManager.swift in Sources */,
 				B77BE2EF238623D600779BE4 /* CharacterDetailViewController.swift in Sources */,
 				B77BE2EB238623CA00779BE4 /* CharacterListViewController.swift in Sources */,
+				B77BE2F7238632F400779BE4 /* CharacterManager.swift in Sources */,
 				B77BE2C723861FE200779BE4 /* AppDelegate.swift in Sources */,
 				B77BE2F323862A5C00779BE4 /* MovieCharacter.swift in Sources */,
 			);

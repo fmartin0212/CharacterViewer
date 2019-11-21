@@ -9,12 +9,41 @@
 import Foundation
 
 protocol NetworkManaging: class {
-    func fetchCharacters(completion: @escaping (MovieCharacter?) -> Void)
+    func fetchObjects<T: Decodable>(fromURL url: URL, completion: @escaping ([T]?) -> Void)
 }
 
-class NetworkManager: NetworkManaging {t
-    func fetchCharacters(completion: @escaping (MovieCharacter?) -> Void) {
-        guard let url = URL(string: baseURLString) else { completion(nil) ; return }
-        
+//protocol NetworkSession {
+//    func dataTask(with request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkTask
+//    func dataTask(with url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkTask
+//}
+//
+//protocol NetworkTask: URLSessionDataTask {}
+//
+//extension URLSession: NetworkSession {
+//    func dataTask(with request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkTask {
+//        return NetworkTask()
+//    }
+//
+//    func dataTask(with url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkTask {
+//
+//    }
+//}
+
+class NetworkManager: NetworkManaging {
+    func fetchObjects<T: Decodable>(fromURL url: URL, completion: @escaping ([T]?) -> Void) {
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                print(error)
+            }
+            guard let data = data else { completion(nil) ; return }
+            do {
+                let objects = try JSONDecoder().decode([T].self, from: data)
+                completion(objects)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+        dataTask.resume()
     }
 }
