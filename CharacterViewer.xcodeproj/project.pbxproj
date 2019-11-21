@@ -33,9 +33,12 @@
 		B77BE2F123862A5C00779BE4 /* TelevisionCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F023862A5C00779BE4 /* TelevisionCharacter.swift */; };
 		B77BE2F223862A5C00779BE4 /* TelevisionCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F023862A5C00779BE4 /* TelevisionCharacter.swift */; };
 		B77BE2F323862A5C00779BE4 /* TelevisionCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F023862A5C00779BE4 /* TelevisionCharacter.swift */; };
-		B77BE2F5238632F400779BE4 /* CharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F4238632F400779BE4 /* CharacterManager.swift */; };
-		B77BE2F6238632F400779BE4 /* CharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F4238632F400779BE4 /* CharacterManager.swift */; };
-		B77BE2F7238632F400779BE4 /* CharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F4238632F400779BE4 /* CharacterManager.swift */; };
+		B77BE2F5238632F400779BE4 /* TelevisionCharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F4238632F400779BE4 /* TelevisionCharacterManager.swift */; };
+		B77BE2F6238632F400779BE4 /* TelevisionCharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F4238632F400779BE4 /* TelevisionCharacterManager.swift */; };
+		B77BE2F7238632F400779BE4 /* TelevisionCharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2F4238632F400779BE4 /* TelevisionCharacterManager.swift */; };
+		B77BE2FB23872B1100779BE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2FA23872B1100779BE4 /* Extensions.swift */; };
+		B77BE2FC23872B1100779BE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2FA23872B1100779BE4 /* Extensions.swift */; };
+		B77BE2FD23872B1100779BE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2FA23872B1100779BE4 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +95,8 @@
 		B77BE2E8238623CA00779BE4 /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		B77BE2EC238623D600779BE4 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		B77BE2F023862A5C00779BE4 /* TelevisionCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionCharacter.swift; sourceTree = "<group>"; };
-		B77BE2F4238632F400779BE4 /* CharacterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterManager.swift; sourceTree = "<group>"; };
+		B77BE2F4238632F400779BE4 /* TelevisionCharacterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionCharacterManager.swift; sourceTree = "<group>"; };
+		B77BE2FA23872B1100779BE4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,8 +176,8 @@
 			children = (
 				B77BE2F923871D6700779BE4 /* View Controllers */,
 				B77BE2F023862A5C00779BE4 /* TelevisionCharacter.swift */,
+				B77BE2F4238632F400779BE4 /* TelevisionCharacterManager.swift */,
 				B77BE2E4238622DD00779BE4 /* NetworkManager.swift */,
-				B77BE2F4238632F400779BE4 /* CharacterManager.swift */,
 				B77BE2F823871CAC00779BE4 /* Resources */,
 			);
 			path = CharacterViewer;
@@ -232,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				B77BE27623860F8F00779BE4 /* AppDelegate.swift */,
+				B77BE2FA23872B1100779BE4 /* Extensions.swift */,
 				B77BE27A23860F8F00779BE4 /* Main.storyboard */,
 				B77BE27D23860F9300779BE4 /* Assets.xcassets */,
 				B77BE27F23860F9300779BE4 /* LaunchScreen.storyboard */,
@@ -474,9 +479,10 @@
 				B77BE2E5238622DD00779BE4 /* NetworkManager.swift in Sources */,
 				B77BE2ED238623D600779BE4 /* CharacterDetailViewController.swift in Sources */,
 				B77BE2E9238623CA00779BE4 /* CharacterListViewController.swift in Sources */,
-				B77BE2F5238632F400779BE4 /* CharacterManager.swift in Sources */,
+				B77BE2F5238632F400779BE4 /* TelevisionCharacterManager.swift in Sources */,
 				B77BE27723860F8F00779BE4 /* AppDelegate.swift in Sources */,
 				B77BE2F123862A5C00779BE4 /* TelevisionCharacter.swift in Sources */,
+				B77BE2FB23872B1100779BE4 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,9 +501,10 @@
 				B77BE2E6238622DD00779BE4 /* NetworkManager.swift in Sources */,
 				B77BE2EE238623D600779BE4 /* CharacterDetailViewController.swift in Sources */,
 				B77BE2EA238623CA00779BE4 /* CharacterListViewController.swift in Sources */,
-				B77BE2F6238632F400779BE4 /* CharacterManager.swift in Sources */,
+				B77BE2F6238632F400779BE4 /* TelevisionCharacterManager.swift in Sources */,
 				B77BE2A123861F9300779BE4 /* AppDelegate.swift in Sources */,
 				B77BE2F223862A5C00779BE4 /* TelevisionCharacter.swift in Sources */,
+				B77BE2FC23872B1100779BE4 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,9 +523,10 @@
 				B77BE2E7238622DD00779BE4 /* NetworkManager.swift in Sources */,
 				B77BE2EF238623D600779BE4 /* CharacterDetailViewController.swift in Sources */,
 				B77BE2EB238623CA00779BE4 /* CharacterListViewController.swift in Sources */,
-				B77BE2F7238632F400779BE4 /* CharacterManager.swift in Sources */,
+				B77BE2F7238632F400779BE4 /* TelevisionCharacterManager.swift in Sources */,
 				B77BE2C723861FE200779BE4 /* AppDelegate.swift in Sources */,
 				B77BE2F323862A5C00779BE4 /* TelevisionCharacter.swift in Sources */,
+				B77BE2FD23872B1100779BE4 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +716,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W53Z73CT67;
-				INFOPLIST_FILE = CharacterViewer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CharacterViewer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -726,7 +734,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W53Z73CT67;
-				INFOPLIST_FILE = CharacterViewer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CharacterViewer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

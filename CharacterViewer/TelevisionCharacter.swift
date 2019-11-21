@@ -9,24 +9,24 @@
 import Foundation
 
 struct TopLevelDictionary: Decodable {
-    let movieCharacters: [TelevisionCharacter]
+    var televisionCharacters: [TelevisionCharacter]
     
     enum CodingKeys: String, CodingKey {
-        case movieCharacters = "RelatedTopics"
+        case televisionCharacters = "RelatedTopics"
     }
 }
 
 struct TelevisionCharacter: Decodable {
-    let title: String
-    let description: String
+    var title: String
+    var description: String
     let icon: Icon?
     var imageURLString: String? {
         return icon?.urlString
     }
     
     enum CodingKeys: String, CodingKey {
-        case title
-        case description
+        case title = "Result"
+        case description = "Text"
         case icon = "Icon"
     }
 }
