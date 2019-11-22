@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         guard let vc = UIStoryboard.characterViewerMain.instantiateViewController(withIdentifier: "CharacterListViewController") as? CharacterListViewController else { return true }
-        vc.televisionCharacterEndpoint = .theWire
         let navC = UINavigationController(rootViewController: vc)
         window?.rootViewController = navC
         window?.makeKeyAndVisible()

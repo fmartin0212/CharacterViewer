@@ -34,7 +34,7 @@ class TelevisionCharacterManager: TelevisionCharacterManaging {
     
     func fetchCharacters(from endpoint: TelevisionCharacterAPIEndPoint, completion: @escaping (Result<[TelevisionCharacter], TelevisionCharacterAPIError>) -> Void) {
         guard let url = URL(string: endpoint.rawValue) else { completion(.failure(.invalidURL)); return }
-        networkManager.fetchObjects(fromURL: url) { (result) in
+        networkManager.fetch(from: url) { (result) in
             switch result {
             case .success(let data):
                 do {

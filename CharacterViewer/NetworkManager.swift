@@ -9,7 +9,7 @@
 import Foundation
 
 protocol NetworkManaging: class {
-    func fetchObjects(fromURL url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void)
+    func fetch(from url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
 //protocol NetworkSession {
@@ -36,7 +36,7 @@ enum NetworkError: Error {
 }
 
 class NetworkManager: NetworkManaging {
-    func fetchObjects(fromURL url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    func fetch(from url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 completion(.failure(.apiError(error)))

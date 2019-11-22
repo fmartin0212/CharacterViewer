@@ -13,6 +13,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterTitleLabel: UILabel!
     @IBOutlet weak var characterDescriptionLabel: UILabel!
+    var characterDetailViewModel: CharacterDetailViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

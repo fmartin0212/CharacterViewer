@@ -18,41 +18,34 @@ class CharacterListViewController: UIViewController {
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterTitleLabel: UILabel!
     @IBOutlet weak var characterDescriptionLabel: UILabel!
-    var televisionCharacterEndpoint: TelevisionCharacterAPIEndPoint?
-    var characters = [TelevisionCharacter]()
-    var characterManager = TelevisionCharacterManager(networkManager: NetworkManager())
+    var characterListViewModel: CharacterListViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         
-        guard let endp = televisionCharacterEndpoint else { return }
-        characterManager.fetchCharacters(from: endp) { (result) in
-            switch result {
-            case .success(let chars):
-                self.characters = chars
+        guard let characterListViewModel = characterListViewModel else { return }
+        characterListViewModel.fetchCharacters(completion: { (error) in
+            if let error = error {
+                print("do something")
+            } else {
                 DispatchQueue.main.async { [weak self] in
-                    let viewModel = CharacterDetailViewModel(model: self!.characters.first!)
-                    print(viewModel.title)
-                    print(viewModel.description)
                     self?.tableView.reloadData()
                 }
-            case .failure(_):
-                return
             }
-        }
+        })
     }
 }
 
 extension CharacterListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count
+        return characterListViewModel?.characters.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath)
-        let character = characters[indexPath.row]
+        guard let character = characterListViewModel?.characters[indexPath.row] else { return UITableViewCell() }
         let characterDetailViewModel = CharacterDetailViewModel(model: character)
         cell.textLabel?.text = characterDetailViewModel.title
         return cell
@@ -61,8 +54,8 @@ extension CharacterListViewController: UITableViewDataSource {
 
 extension CharacterListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let traits = self.traitCollection.horizontalSizeClass
-        if traits == .compact {
+        let horSizeClass = self.traitCollection.horizontalSizeClass
+        if horSizeClass == .compact {
             let vc = UIStoryboard.characterViewerMain.instantiateViewController(withIdentifier: "CharacterDetailViewController")
             self.navigationController?.pushViewController(vc, animated: true)
         }

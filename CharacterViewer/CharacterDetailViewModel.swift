@@ -16,8 +16,14 @@ class CharacterDetailViewModel {
     }
     
     var title: String {
-        guard let dashIndex = model.text.firstIndex(of: "-") else { return "" }
-        return String(model.text.prefix(upTo: dashIndex))
+        guard let dashIndex = model.text.firstIndex(of: "-") else { return model.text }
+        let startingIndex = model.text.index(dashIndex, offsetBy: -1)
+        var string = String(model.text.prefix(upTo: startingIndex))
+        
+        guard let range = string.range(of: "(The Wire)") else { return string }
+        string.removeSubrange(range)
+        
+        return string
     }
     
     var description: String {
