@@ -43,7 +43,6 @@ class TelevisionCharacterManager: TelevisionCharacterManaging {
                 } catch {
                     completion(.failure(.decodingError))
                 }
-            // FIXME: -  **** Error handling ****
             case .failure(_):
                 completion(.failure(.generic))
             }

@@ -19,10 +19,12 @@
 		B72F0F6723876244002148CE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72F0F6623876244002148CE /* AppCoordinator.swift */; };
 		B72F0F6823876244002148CE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72F0F6623876244002148CE /* AppCoordinator.swift */; };
 		B72F0F6923876244002148CE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72F0F6623876244002148CE /* AppCoordinator.swift */; };
+		B76A21CB2389DFAE0005D088 /* TestMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E782D2389CCFB00DD5727 /* TestMocks.swift */; };
+		B76A21CD2389E0740005D088 /* TheWireData.json in Resources */ = {isa = PBXBuildFile; fileRef = B76A21CC2389E0740005D088 /* TheWireData.json */; };
+		B76A21CE2389E2D00005D088 /* SimpsonsData.json in Resources */ = {isa = PBXBuildFile; fileRef = B76A21C82389DC190005D088 /* SimpsonsData.json */; };
 		B77BE27723860F8F00779BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE27623860F8F00779BE4 /* AppDelegate.swift */; };
 		B77BE27C23860F8F00779BE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27A23860F8F00779BE4 /* Main.storyboard */; };
 		B77BE28123860F9300779BE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27F23860F9300779BE4 /* LaunchScreen.storyboard */; };
-		B77BE28C23860F9300779BE4 /* CharacterViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE28B23860F9300779BE4 /* CharacterViewerTests.swift */; };
 		B77BE2A123861F9300779BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2A023861F9300779BE4 /* AppDelegate.swift */; };
 		B77BE2AB23861F9500779BE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE2A923861F9500779BE4 /* LaunchScreen.storyboard */; };
 		B77BE2B623861F9500779BE4 /* SimpsonCharacterViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2B523861F9500779BE4 /* SimpsonCharacterViewerTests.swift */; };
@@ -50,6 +52,8 @@
 		B77BE2FD23872B1100779BE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2FA23872B1100779BE4 /* Extensions.swift */; };
 		B77E78252389CA2700DD5727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27D23860F9300779BE4 /* Assets.xcassets */; };
 		B77E78282389CA5F00DD5727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27D23860F9300779BE4 /* Assets.xcassets */; };
+		B77E782A2389CCB600DD5727 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E78292389CCB600DD5727 /* NetworkManagerTests.swift */; };
+		B77E782C2389CCCC00DD5727 /* TelevisionCharacterManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E782B2389CCCC00DD5727 /* TelevisionCharacterManagerTests.swift */; };
 		B7BB8808238740C500E4B906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27A23860F8F00779BE4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +86,8 @@
 		B72F0F5E2387559A002148CE /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		B72F0F6223875C79002148CE /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		B72F0F6623876244002148CE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		B76A21C82389DC190005D088 /* SimpsonsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SimpsonsData.json; sourceTree = "<group>"; };
+		B76A21CC2389E0740005D088 /* TheWireData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TheWireData.json; sourceTree = "<group>"; };
 		B77BE27323860F8F00779BE4 /* CharacterViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharacterViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77BE27623860F8F00779BE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B77BE27B23860F8F00779BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,7 +95,6 @@
 		B77BE28023860F9300779BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B77BE28223860F9300779BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77BE28723860F9300779BE4 /* CharacterViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharacterViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B77BE28B23860F9300779BE4 /* CharacterViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewerTests.swift; sourceTree = "<group>"; };
 		B77BE28D23860F9300779BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77BE29E23861F9300779BE4 /* SimpsonCharacterViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpsonCharacterViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77BE2A023861F9300779BE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +116,9 @@
 		B77BE2F023862A5C00779BE4 /* TelevisionCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionCharacter.swift; sourceTree = "<group>"; };
 		B77BE2F4238632F400779BE4 /* TelevisionCharacterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionCharacterManager.swift; sourceTree = "<group>"; };
 		B77BE2FA23872B1100779BE4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B77E78292389CCB600DD5727 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		B77E782B2389CCCC00DD5727 /* TelevisionCharacterManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionCharacterManagerTests.swift; sourceTree = "<group>"; };
+		B77E782D2389CCFB00DD5727 /* TestMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,8 +220,10 @@
 		B77BE28A23860F9300779BE4 /* CharacterViewerTests */ = {
 			isa = PBXGroup;
 			children = (
-				B77BE28B23860F9300779BE4 /* CharacterViewerTests.swift */,
+				B77E782D2389CCFB00DD5727 /* TestMocks.swift */,
 				B77BE28D23860F9300779BE4 /* Info.plist */,
+				B77E78292389CCB600DD5727 /* NetworkManagerTests.swift */,
+				B77E782B2389CCCC00DD5727 /* TelevisionCharacterManagerTests.swift */,
 			);
 			path = CharacterViewerTests;
 			sourceTree = "<group>";
@@ -259,6 +269,8 @@
 		B77BE2F823871CAC00779BE4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B76A21C82389DC190005D088 /* SimpsonsData.json */,
+				B76A21CC2389E0740005D088 /* TheWireData.json */,
 				B77BE27623860F8F00779BE4 /* AppDelegate.swift */,
 				B77BE2FA23872B1100779BE4 /* Extensions.swift */,
 				B77BE27A23860F8F00779BE4 /* Main.storyboard */,
@@ -401,6 +413,7 @@
 					};
 					B77BE28623860F9300779BE4 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 						TestTargetID = B77BE27223860F8F00779BE4;
 					};
 					B77BE29D23861F9300779BE4 = {
@@ -447,7 +460,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B76A21CE2389E2D00005D088 /* SimpsonsData.json in Resources */,
 				B77BE28123860F9300779BE4 /* LaunchScreen.storyboard in Resources */,
+				B76A21CD2389E0740005D088 /* TheWireData.json in Resources */,
 				B77E78252389CA2700DD5727 /* Assets.xcassets in Resources */,
 				B77BE27C23860F8F00779BE4 /* Main.storyboard in Resources */,
 			);
@@ -503,6 +518,7 @@
 				B77BE2E5238622DD00779BE4 /* NetworkManager.swift in Sources */,
 				B77BE2ED238623D600779BE4 /* CharacterDetailViewController.swift in Sources */,
 				B77BE2E9238623CA00779BE4 /* CharacterListViewController.swift in Sources */,
+				B76A21CB2389DFAE0005D088 /* TestMocks.swift in Sources */,
 				B72F0F5F2387559A002148CE /* ImageManager.swift in Sources */,
 				B77BE2F5238632F400779BE4 /* TelevisionCharacterManager.swift in Sources */,
 				B72F0F5B23874C71002148CE /* CharacterDetailViewModel.swift in Sources */,
@@ -518,7 +534,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B77BE28C23860F9300779BE4 /* CharacterViewerTests.swift in Sources */,
+				B77E782A2389CCB600DD5727 /* NetworkManagerTests.swift in Sources */,
+				B77E782C2389CCCC00DD5727 /* TelevisionCharacterManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,6 +804,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CharacterViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -796,6 +814,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FrankMartin.CharacterViewerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CharacterViewer.app/CharacterViewer";
@@ -807,6 +826,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CharacterViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

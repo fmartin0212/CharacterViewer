@@ -1,15 +1,14 @@
 //
-//  CharacterViewerTests.swift
+//  NetworkManagerTests.swift
 //  CharacterViewerTests
 //
-//  Created by Frank Martin Jr on 11/20/19.
+//  Created by Frank Martin Jr on 11/23/19.
 //  Copyright © 2019 FrankMartin. All rights reserved.
 //
 
 import XCTest
-@testable import CharacterViewer
 
-class CharacterViewerTests: XCTestCase {
+class NetworkManagerTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol NetworkManaging: class {
-    func fetch(from url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void)
-}
-
 //protocol NetworkSession {
 //    func dataTask(with request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkTask
 //    func dataTask(with url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkTask
@@ -28,6 +24,9 @@ protocol NetworkManaging: class {
 //
 //    }
 //}
+protocol NetworkManaging: class {
+    func fetch(from url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void)
+}
 
 enum NetworkError: Error {
     case generic

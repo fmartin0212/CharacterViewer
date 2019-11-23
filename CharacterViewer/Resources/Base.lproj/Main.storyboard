@@ -113,7 +113,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhB-Lk-ssi" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="614.5" height="737"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cCU-yE-F6R">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t" translatesAutoresizingMaskIntoConstraints="NO" id="cCU-yE-F6R">
                                                 <rect key="frame" x="0.0" y="0.0" width="614.5" height="661"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a character" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fF9-va-qAn">
@@ -181,4 +181,7 @@
             <point key="canvasLocation" x="1506" y="100"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="t" width="16" height="16"/>
+    </resources>
 </document>
