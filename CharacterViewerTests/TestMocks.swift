@@ -6,12 +6,13 @@
 //  Copyright © 2019 FrankMartin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManagerMock: NetworkManaging {
     private struct Constants {
         static let SimpsonsURL = "http://api.duckduckgo.com/?q=simpsons+characters&format=json"
         static let TheWireURL = "http://api.duckduckgo.com/?q=the+wire+characters&format=json"
+        static let ImageURL = "www.testimageurl.com"
         static let SimpsonsDataFilename = "SimpsonsData"
         static let TheWireDataFilename = "TheWireData"
     }
@@ -26,8 +27,11 @@ class NetworkManagerMock: NetworkManaging {
         case Constants.TheWireURL:
             let data = loadJsonFrom(fileName: Constants.TheWireDataFilename)
             completion(.success(data))
+        case Constants.ImageURL:
+            guard let imageData = UIImage(named: "NotFound")?.pngData() else { completion(.failure(.generic)) ; return }
+            completion(.success(imageData))
         default:
-            return
+            completion(.failure(.generic))
         }
     }
     

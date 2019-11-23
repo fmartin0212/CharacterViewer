@@ -15,7 +15,6 @@ enum ImageManagerError: Error {
 
 protocol ImageManaging {
     var networkManager: NetworkManaging { get set }
-    
 }
 
 class ImageManager: ImageManaging {
