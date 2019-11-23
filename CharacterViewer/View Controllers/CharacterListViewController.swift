@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CharacterListViewControllerCoordinatorDelegate: class {
+    func userDidSelectRow(at indexPath: IndexPath, on viewController: CharacterListViewController)
+}
+
 class CharacterListViewController: UIViewController {
     
     // MARK: - Properties
@@ -19,6 +23,7 @@ class CharacterListViewController: UIViewController {
     @IBOutlet weak var characterTitleLabel: UILabel!
     @IBOutlet weak var characterDescriptionLabel: UILabel!
     var characterListViewModel: CharacterListViewModel?
+    var coordinatorDelegate: CharacterListViewControllerCoordinatorDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +43,21 @@ class CharacterListViewController: UIViewController {
     }
 }
 
+extension CharacterListViewController {
+    func updateLabels(with characterDetailViewModel: CharacterDetailViewModel) {
+        DispatchQueue.main.async { [weak self] in
+        self?.characterTitleLabel.text = characterDetailViewModel.title
+        self?.characterDescriptionLabel.text = characterDetailViewModel.description
+        }
+    }
+    
+    func updateImageView(with image: UIImage) {
+        DispatchQueue.main.async { [weak self] in
+            self?.characterImageView.image = image
+        }
+    }
+}
+
 extension CharacterListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characterListViewModel?.characters.count ?? 0
@@ -54,10 +74,6 @@ extension CharacterListViewController: UITableViewDataSource {
 
 extension CharacterListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let horSizeClass = self.traitCollection.horizontalSizeClass
-        if horSizeClass == .compact {
-            let vc = UIStoryboard.characterViewerMain.instantiateViewController(withIdentifier: "CharacterDetailViewController")
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        coordinatorDelegate?.userDidSelectRow(at: indexPath, on: self)
     }
 }

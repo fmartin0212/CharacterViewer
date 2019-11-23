@@ -12,14 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let coordinator = AppCoordinator(endpoint: .theWire)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        guard let vc = UIStoryboard.characterViewerMain.instantiateViewController(withIdentifier: "CharacterListViewController") as? CharacterListViewController else { return true }
-        let navC = UINavigationController(rootViewController: vc)
-        window?.rootViewController = navC
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = coordinator.navigationController
         window?.makeKeyAndVisible()
+        coordinator.start()
         
         return true
     }

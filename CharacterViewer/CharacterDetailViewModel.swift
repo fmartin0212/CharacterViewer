@@ -31,4 +31,9 @@ class CharacterDetailViewModel {
         let startingIndex = model.text.index(dashIndex, offsetBy: 2)
         return String(model.text.suffix(from: startingIndex))
     }
+    
+    var imageURL: URL? {
+        guard let imageURLString = model.imageURLString else { return nil }
+        return URL(string: imageURLString)
+    }
 }

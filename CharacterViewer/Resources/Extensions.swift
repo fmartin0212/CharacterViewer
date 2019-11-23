@@ -11,3 +11,7 @@ import UIKit
 extension UIStoryboard {
     static let characterViewerMain = UIStoryboard(name: "Main", bundle: nil)
 }
+
+extension UIViewController {
+    static let Identifier = String(describing: self)
+}
