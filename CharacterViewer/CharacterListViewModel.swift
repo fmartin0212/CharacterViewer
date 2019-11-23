@@ -11,7 +11,9 @@ import Foundation
 class CharacterListViewModel {
     let characterManager: TelevisionCharacterManaging
     let endpoint: TelevisionCharacterAPIEndPoint
+    var allCharacters = [TelevisionCharacter]()
     var characters = [TelevisionCharacter]()
+    var filteredList = [TelevisionCharacter]()
     
     init(characterManager: TelevisionCharacterManaging, endpoint: TelevisionCharacterAPIEndPoint) {
         self.characterManager = characterManager
@@ -22,6 +24,7 @@ class CharacterListViewModel {
         characterManager.fetchCharacters(from: endpoint) { (result) in
             switch result {
             case .success(let characters):
+                self.allCharacters = characters
                 self.characters = characters
                 completion(nil)
             case .failure(let error):

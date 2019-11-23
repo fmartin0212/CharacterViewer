@@ -19,20 +19,15 @@
 		B72F0F6723876244002148CE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72F0F6623876244002148CE /* AppCoordinator.swift */; };
 		B72F0F6823876244002148CE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72F0F6623876244002148CE /* AppCoordinator.swift */; };
 		B72F0F6923876244002148CE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72F0F6623876244002148CE /* AppCoordinator.swift */; };
-		B72F0F6A238975AD002148CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27D23860F9300779BE4 /* Assets.xcassets */; };
-		B72F0F6B238975AE002148CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27D23860F9300779BE4 /* Assets.xcassets */; };
 		B77BE27723860F8F00779BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE27623860F8F00779BE4 /* AppDelegate.swift */; };
 		B77BE27C23860F8F00779BE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27A23860F8F00779BE4 /* Main.storyboard */; };
-		B77BE27E23860F9300779BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27D23860F9300779BE4 /* Assets.xcassets */; };
 		B77BE28123860F9300779BE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27F23860F9300779BE4 /* LaunchScreen.storyboard */; };
 		B77BE28C23860F9300779BE4 /* CharacterViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE28B23860F9300779BE4 /* CharacterViewerTests.swift */; };
 		B77BE2A123861F9300779BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2A023861F9300779BE4 /* AppDelegate.swift */; };
-		B77BE2A823861F9500779BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77BE2A723861F9500779BE4 /* Assets.xcassets */; };
 		B77BE2AB23861F9500779BE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE2A923861F9500779BE4 /* LaunchScreen.storyboard */; };
 		B77BE2B623861F9500779BE4 /* SimpsonCharacterViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2B523861F9500779BE4 /* SimpsonCharacterViewerTests.swift */; };
 		B77BE2BF23861FA200779BE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27A23860F8F00779BE4 /* Main.storyboard */; };
 		B77BE2C723861FE200779BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2C623861FE200779BE4 /* AppDelegate.swift */; };
-		B77BE2CE23861FE300779BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77BE2CD23861FE300779BE4 /* Assets.xcassets */; };
 		B77BE2D123861FE300779BE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE2CF23861FE300779BE4 /* LaunchScreen.storyboard */; };
 		B77BE2DC23861FE300779BE4 /* TheWireCharacterViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2DB23861FE300779BE4 /* TheWireCharacterViewerTests.swift */; };
 		B77BE2E5238622DD00779BE4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2E4238622DD00779BE4 /* NetworkManager.swift */; };
@@ -53,6 +48,8 @@
 		B77BE2FB23872B1100779BE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2FA23872B1100779BE4 /* Extensions.swift */; };
 		B77BE2FC23872B1100779BE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2FA23872B1100779BE4 /* Extensions.swift */; };
 		B77BE2FD23872B1100779BE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE2FA23872B1100779BE4 /* Extensions.swift */; };
+		B77E78252389CA2700DD5727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27D23860F9300779BE4 /* Assets.xcassets */; };
+		B77E78282389CA5F00DD5727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27D23860F9300779BE4 /* Assets.xcassets */; };
 		B7BB8808238740C500E4B906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27A23860F8F00779BE4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +93,6 @@
 		B77BE28D23860F9300779BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77BE29E23861F9300779BE4 /* SimpsonCharacterViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpsonCharacterViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77BE2A023861F9300779BE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B77BE2A723861F9500779BE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B77BE2AA23861F9500779BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B77BE2AC23861F9500779BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77BE2B123861F9500779BE4 /* SimpsonCharacterViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpsonCharacterViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +100,6 @@
 		B77BE2B723861F9500779BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77BE2C423861FE200779BE4 /* TheWireCharacterViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheWireCharacterViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77BE2C623861FE200779BE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B77BE2CD23861FE300779BE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B77BE2D023861FE300779BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B77BE2D223861FE300779BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77BE2D723861FE300779BE4 /* TheWireCharacterViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheWireCharacterViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				B77BE2A023861F9300779BE4 /* AppDelegate.swift */,
-				B77BE2A723861F9500779BE4 /* Assets.xcassets */,
 				B77BE2A923861F9500779BE4 /* LaunchScreen.storyboard */,
 				B77BE2AC23861F9500779BE4 /* Info.plist */,
 			);
@@ -247,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				B77BE2C623861FE200779BE4 /* AppDelegate.swift */,
-				B77BE2CD23861FE300779BE4 /* Assets.xcassets */,
 				B77BE2CF23861FE300779BE4 /* LaunchScreen.storyboard */,
 				B77BE2D223861FE300779BE4 /* Info.plist */,
 			);
@@ -455,7 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77BE28123860F9300779BE4 /* LaunchScreen.storyboard in Resources */,
-				B77BE27E23860F9300779BE4 /* Assets.xcassets in Resources */,
+				B77E78252389CA2700DD5727 /* Assets.xcassets in Resources */,
 				B77BE27C23860F8F00779BE4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,8 +465,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77BE2AB23861F9500779BE4 /* LaunchScreen.storyboard in Resources */,
-				B77BE2A823861F9500779BE4 /* Assets.xcassets in Resources */,
-				B72F0F6A238975AD002148CE /* Assets.xcassets in Resources */,
 				B77BE2BF23861FA200779BE4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,8 +482,7 @@
 			files = (
 				B7BB8808238740C500E4B906 /* Main.storyboard in Resources */,
 				B77BE2D123861FE300779BE4 /* LaunchScreen.storyboard in Resources */,
-				B72F0F6B238975AE002148CE /* Assets.xcassets in Resources */,
-				B77BE2CE23861FE300779BE4 /* Assets.xcassets in Resources */,
+				B77E78282389CA5F00DD5727 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

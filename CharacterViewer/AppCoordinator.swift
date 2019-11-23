@@ -70,6 +70,16 @@ extension AppCoordinator: CharacterListViewControllerCoordinatorDelegate {
             }
         }
     }
+    
+    func searchBar(textDidChange searchText: String, on viewController: CharacterListViewController, listViewModel: CharacterListViewModel) {
+        guard searchText != "" else {
+            listViewModel.characters = listViewModel.allCharacters
+            viewController.tableView.reloadData()
+            return
+        }
+        listViewModel.characters = listViewModel.allCharacters.filter { $0.text.contains(searchText) }
+        viewController.tableView.reloadData()
+    }
 }
 
 extension AppCoordinator: CharacterDetailViewControllerDelegate {

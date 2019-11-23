@@ -10,6 +10,7 @@ import UIKit
 
 protocol CharacterListViewControllerCoordinatorDelegate: class {
     func userDidSelectRow(at indexPath: IndexPath, on viewController: CharacterListViewController)
+    func searchBar(textDidChange searchText: String, on viewController: CharacterListViewController, listViewModel: CharacterListViewModel)
 }
 
 class CharacterListViewController: UIViewController {
@@ -18,10 +19,6 @@ class CharacterListViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-//    @IBOutlet weak var characterDetailStackView: UIStackView!
-//    @IBOutlet weak var characterImageView: UIImageView!
-//    @IBOutlet weak var characterTitleLabel: UILabel!
-//    @IBOutlet weak var characterDescriptionLabel: UILabel!
     var characterListViewModel: CharacterListViewModel?
     var coordinatorDelegate: CharacterListViewControllerCoordinatorDelegate?
     
@@ -29,11 +26,15 @@ class CharacterListViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        searchBar.delegate = self
         
         guard let characterListViewModel = characterListViewModel else { return }
         characterListViewModel.fetchCharacters(completion: { (error) in
-            if let error = error {
-                print("do something")
+            if error != nil {
+                DispatchQueue.main.async { [weak self] in
+                    let alert = UIAlertController.genericError()
+                    self?.present(alert, animated: true, completion: nil)
+                }
             } else {
                 DispatchQueue.main.async { [weak self] in
                     self?.tableView.reloadData()
@@ -60,5 +61,12 @@ extension CharacterListViewController: UITableViewDataSource {
 extension CharacterListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         coordinatorDelegate?.userDidSelectRow(at: indexPath, on: self)
+    }
+}
+
+extension CharacterListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let listViewModel = characterListViewModel else { return }
+        coordinatorDelegate?.searchBar(textDidChange: searchText, on: self, listViewModel: listViewModel)
     }
 }

@@ -15,3 +15,12 @@ extension UIStoryboard {
 extension UIViewController {
     static let Identifier = String(describing: self)
 }
+
+extension UIAlertController {
+    static func genericError() -> UIAlertController {
+        let alertC = UIAlertController(title: "Something went wrong.", message: "Please try again.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertC.addAction(okAction)
+        return alertC
+    }
+}

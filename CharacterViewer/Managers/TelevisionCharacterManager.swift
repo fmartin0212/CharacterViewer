@@ -19,7 +19,6 @@ enum TelevisionCharacterAPIError: Error {
     case generic
 }
 
-
 protocol TelevisionCharacterManaging {
     var networkManager: NetworkManaging { get set }
     func fetchCharacters(from endpoint: TelevisionCharacterAPIEndPoint, completion: @escaping (Result<[TelevisionCharacter], TelevisionCharacterAPIError>) -> Void)
