@@ -54,18 +54,19 @@ extension AppCoordinator: CharacterListViewControllerCoordinatorDelegate {
             characterDetailViewController.coordinatorDelegate = self
             navigationController.pushViewController(characterDetailViewController, animated: true)
         } else {
-            viewController.updateLabels(with: characterDetailViewModel)
+            guard let detailVC = viewController.children.first as? CharacterDetailViewController else { return }
+            detailVC.updateLabels(with: characterDetailViewModel)
             if let imageURL = characterDetailViewModel.imageURL {
                 dependencies.imageManager.fetchImage(from: imageURL) { (result) in
                     switch result {
                     case .success(let image):
-                        viewController.updateImageView(with: image)
+                        detailVC.updateImageView(with: image)
                     case .failure(_):
-                        viewController.updateImageView(with: UIImage(named: "NotFound") ?? UIImage())
+                        detailVC.updateImageView(with: UIImage(named: "NotFound") ?? UIImage())
                     }
                 }
             } else {
-                viewController.updateImageView(with: UIImage(named: "NotFound") ?? UIImage())
+                detailVC.updateImageView(with: UIImage(named: "NotFound") ?? UIImage())
             }
         }
     }

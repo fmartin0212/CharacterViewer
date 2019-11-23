@@ -18,10 +18,10 @@ class CharacterListViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var characterDetailStackView: UIStackView!
-    @IBOutlet weak var characterImageView: UIImageView!
-    @IBOutlet weak var characterTitleLabel: UILabel!
-    @IBOutlet weak var characterDescriptionLabel: UILabel!
+//    @IBOutlet weak var characterDetailStackView: UIStackView!
+//    @IBOutlet weak var characterImageView: UIImageView!
+//    @IBOutlet weak var characterTitleLabel: UILabel!
+//    @IBOutlet weak var characterDescriptionLabel: UILabel!
     var characterListViewModel: CharacterListViewModel?
     var coordinatorDelegate: CharacterListViewControllerCoordinatorDelegate?
     
@@ -40,21 +40,6 @@ class CharacterListViewController: UIViewController {
                 }
             }
         })
-    }
-}
-
-extension CharacterListViewController {
-    func updateLabels(with characterDetailViewModel: CharacterDetailViewModel) {
-        DispatchQueue.main.async { [weak self] in
-        self?.characterTitleLabel.text = characterDetailViewModel.title
-        self?.characterDescriptionLabel.text = characterDetailViewModel.description
-        }
-    }
-    
-    func updateImageView(with image: UIImage) {
-        DispatchQueue.main.async { [weak self] in
-            self?.characterImageView.image = image
-        }
     }
 }
 
