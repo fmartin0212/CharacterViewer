@@ -7,27 +7,70 @@
 //
 
 import XCTest
+@testable import CharacterViewer
 
 class CharacterListViewControllerTests: XCTestCase {
 
+    var sut: CharacterListViewController!
+    var navController: UINavigationController!
+    var coordinatorMock: CharacterListVCCoordinatorDelegateMock! {
+        return sut.coordinatorDelegate as? CharacterListVCCoordinatorDelegateMock
+    }
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = UIStoryboard.characterViewerMain.instantiateViewController(withIdentifier: "CharacterListViewController") as? CharacterListViewController
+        let networkManagerMock = NetworkManagerMock()
+        let tvCharacterManagerMock = TelevisionCharacterManager(networkManager: networkManagerMock)
+        let characterListViewModel = CharacterListViewModel(characterManager: tvCharacterManagerMock, app: .simpsons)
+        let coordinatorDelegateMock = CharacterListVCCoordinatorDelegateMock()
+        sut.characterListViewModel = characterListViewModel
+        sut.coordinatorDelegate = coordinatorDelegateMock
+        navController = NavigationControllerMock(rootViewController: sut)
+        _ = sut.view
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        navController = nil
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_sut_ShouldBeTableViewDataSource() {
+        XCTAssertTrue(sut.tableView.dataSource is CharacterListViewController )
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_sut_ShouldBeTableViewDelegate() {
+        XCTAssertTrue(sut.tableView.delegate is CharacterListViewController )
     }
+    
+    func test_sut_ShouldBeSearchBarDelegate() {
+        XCTAssertTrue(sut.searchBar.delegate is CharacterListViewController )
+    }
+    
+    func test_numberOfRowsInSection_ShouldBeOne() {
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+    }
+    
+    func test_DidSelectRow_ShouldDelegateToCoordinator() {
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertTrue(coordinatorMock.userDidSelectRowWasCalled)
+    }
+    
+    func test_searchBarTextDidChange_ShouldDelegateToCoordinator() {
+        sut.searchBar(sut.searchBar, textDidChange: "FooBar")
+        
+        XCTAssertTrue(coordinatorMock.searchBarTextDidChangeWasCalled)
+    }
+}
 
+class CharacterListVCCoordinatorDelegateMock: CharacterListViewControllerCoordinatorDelegate {
+    var userDidSelectRowWasCalled = false
+    var searchBarTextDidChangeWasCalled = false
+    
+    func userDidSelectRow(at indexPath: IndexPath, on viewController: CharacterListViewController) {
+        userDidSelectRowWasCalled = true
+    }
+    
+    func searchBar(textDidChange searchText: String, on viewController: CharacterListViewController, listViewModel: CharacterListViewModel) {
+        searchBarTextDidChangeWasCalled = true
+    }
 }

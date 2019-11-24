@@ -14,7 +14,7 @@ protocol Coordinator {
 
 class AppCoordinator: Coordinator {
     let navigationController: UINavigationController
-    let endpoint: TelevisionCharacterAPIEndPoint
+    let app: TelevisionCharacterApp
     let dependencies: Dependencies
     
     struct Dependencies {
@@ -26,16 +26,16 @@ class AppCoordinator: Coordinator {
         }
     }
     
-    init(endpoint: TelevisionCharacterAPIEndPoint) {
+    init(endpoint: TelevisionCharacterApp) {
         self.navigationController = UINavigationController()
-        self.endpoint = endpoint
+        self.app = endpoint
         self.dependencies = Dependencies()
     }
     
     func start() {
         guard let characterListViewController = UIStoryboard.characterViewerMain.instantiateViewController(withIdentifier: "CharacterListViewController") as? CharacterListViewController else { return }
         let characterListViewModel = CharacterListViewModel(characterManager: dependencies.characterManager,
-                                                            endpoint: endpoint)
+                                                            app: app)
         characterListViewController.characterListViewModel = characterListViewModel
         characterListViewController.coordinatorDelegate = self
         navigationController.pushViewController(characterListViewController, animated: true)

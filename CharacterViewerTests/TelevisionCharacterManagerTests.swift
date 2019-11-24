@@ -26,7 +26,7 @@ class TelevisionCharacterManagerTests: XCTestCase {
         var fetchedCharacters = [TelevisionCharacter]()
 
         let expectation = self.expectation(description: "Fetch Characters Completion")
-        sut.fetchCharacters(from: .simpsons) { (result) in
+        sut.fetchCharacters(for: .simpsons) { (result) in
             switch result {
             case .success(let characters):
                 fetchedCharacters = characters
@@ -47,7 +47,7 @@ class TelevisionCharacterManagerTests: XCTestCase {
         var fetchedCharacters = [TelevisionCharacter]()
         
         let expectation = self.expectation(description: "Fetch Characters Completion")
-        sut.fetchCharacters(from: .theWire) { (result) in
+        sut.fetchCharacters(for: .theWire) { (result) in
             switch result {
             case .success(let characters):
                 fetchedCharacters = characters

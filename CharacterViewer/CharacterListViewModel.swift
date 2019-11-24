@@ -10,18 +10,18 @@ import Foundation
 
 class CharacterListViewModel {
     let characterManager: TelevisionCharacterManaging
-    let endpoint: TelevisionCharacterAPIEndPoint
+    let app: TelevisionCharacterApp
     var allCharacters = [TelevisionCharacter]()
     var characters = [TelevisionCharacter]()
     var filteredList = [TelevisionCharacter]()
     
-    init(characterManager: TelevisionCharacterManaging, endpoint: TelevisionCharacterAPIEndPoint) {
+    init(characterManager: TelevisionCharacterManaging, app: TelevisionCharacterApp) {
         self.characterManager = characterManager
-        self.endpoint = endpoint
+        self.app = app
     }
     
     func fetchCharacters(completion: @escaping (TelevisionCharacterAPIError?) -> Void) {
-        characterManager.fetchCharacters(from: endpoint) { (result) in
+        characterManager.fetchCharacters(for: app) { (result) in
             switch result {
             case .success(let characters):
                 self.allCharacters = characters

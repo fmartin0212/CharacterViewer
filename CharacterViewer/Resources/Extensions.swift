@@ -12,10 +12,6 @@ extension UIStoryboard {
     static let characterViewerMain = UIStoryboard(name: "Main", bundle: nil)
 }
 
-extension UIViewController {
-    static let Identifier = String(describing: self)
-}
-
 extension UIAlertController {
     static func genericError() -> UIAlertController {
         let alertC = UIAlertController(title: "Something went wrong.", message: "Please try again.", preferredStyle: .alert)

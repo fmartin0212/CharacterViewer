@@ -8,9 +8,18 @@
 
 import Foundation
 
-enum TelevisionCharacterAPIEndPoint: String {
+enum TelevisionCharacterApp: String {
     case simpsons = "http://api.duckduckgo.com/?q=simpsons+characters&format=json"
     case theWire = "http://api.duckduckgo.com/?q=the+wire+characters&format=json"
+    
+    var endpoint: URL? {
+        switch self {
+        case .simpsons:
+            return URL(string: "http://api.duckduckgo.com/?q=simpsons+characters&format=json")
+        case .theWire:
+            return URL(string: "http://api.duckduckgo.com/?q=the+wire+characters&format=json")
+        }
+    }
 }
 
 enum TelevisionCharacterAPIError: Error {
@@ -21,7 +30,7 @@ enum TelevisionCharacterAPIError: Error {
 
 protocol TelevisionCharacterManaging {
     var networkManager: NetworkManaging { get set }
-    func fetchCharacters(from endpoint: TelevisionCharacterAPIEndPoint, completion: @escaping (Result<[TelevisionCharacter], TelevisionCharacterAPIError>) -> Void)
+    func fetchCharacters(for app: TelevisionCharacterApp, completion: @escaping (Result<[TelevisionCharacter], TelevisionCharacterAPIError>) -> Void)
 }
 
 class TelevisionCharacterManager: TelevisionCharacterManaging {
@@ -31,8 +40,8 @@ class TelevisionCharacterManager: TelevisionCharacterManaging {
         self.networkManager = networkManager
     }
     
-    func fetchCharacters(from endpoint: TelevisionCharacterAPIEndPoint, completion: @escaping (Result<[TelevisionCharacter], TelevisionCharacterAPIError>) -> Void) {
-        guard let url = URL(string: endpoint.rawValue) else { completion(.failure(.invalidURL)); return }
+    func fetchCharacters(for app: TelevisionCharacterApp, completion: @escaping (Result<[TelevisionCharacter], TelevisionCharacterAPIError>) -> Void) {
+        guard let url = app.endpoint else { completion(.failure(.invalidURL)); return }
         networkManager.fetch(from: url) { (result) in
             switch result {
             case .success(let data):
