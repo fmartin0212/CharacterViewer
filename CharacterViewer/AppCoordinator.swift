@@ -15,9 +15,9 @@ class AppCoordinator {
     var characterManager: TelevisionCharacterManaging
     var imageManager: ImageManaging
 
-    init(app: TelevisionCharacterApp) {
-        self.navigationController = UINavigationController()
+    init(app: TelevisionCharacterApp, navigationController: UINavigationController) {
         self.app = app
+        self.navigationController = navigationController
         self.networkManager = NetworkManager()
         self.characterManager = TelevisionCharacterManager(networkManager: networkManager)
         self.imageManager = ImageManager(networkManager: networkManager)
@@ -74,7 +74,7 @@ extension AppCoordinator: CharacterListViewControllerCoordinatorDelegate {
 }
 
 extension AppCoordinator: CharacterDetailViewControllerDelegate {
-    func viewDidLoad(viewController: CharacterDetailViewController, viewModel: CharacterDetailViewModel) {
+    func characterDetailViewDidLoad(viewController: CharacterDetailViewController, viewModel: CharacterDetailViewModel) {
         viewController.updateLabels(with: viewModel)
         guard let imageURL = viewModel.imageURL else {
             viewController.updateImageView(with: UIImage(named: "NotFound") ?? UIImage())

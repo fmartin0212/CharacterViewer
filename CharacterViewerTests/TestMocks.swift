@@ -8,6 +8,15 @@
 
 import UIKit
 
+class NavigationControllerMock: UINavigationController {
+    var pushedViewController: UIViewController?
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        self.pushedViewController = viewController
+        super.pushViewController(viewController, animated: false)
+    }
+}
+
 class NetworkManagerMock: NetworkManaging {
     private struct Constants {
         static let SimpsonsURL = "http://api.duckduckgo.com/?q=simpsons+characters&format=json"
@@ -42,10 +51,26 @@ class NetworkManagerMock: NetworkManaging {
     }
 }
 
-class NavigationControllerMock: UINavigationController {
-    var pushedViewController: UIViewController?
+class ImageManagerMock: ImageManaging {
+    var networkManager: NetworkManaging
     
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        self.pushedViewController = viewController
+    init(networkManagerMock: NetworkManaging) {
+        self.networkManager = networkManagerMock
+    }
+    
+    func fetchImage(from url: URL, completion: @escaping (Result<UIImage, ImageManagerError>) -> Void) {
+        completion(.success(UIImage(named: "NotFound") ?? UIImage()))
+    }
+}
+
+class CharacterListViewModelMock: CharacterListViewModel {
+    override init(characterManager: TelevisionCharacterManaging, app: TelevisionCharacterApp) {
+        super.init(characterManager: characterManager, app: app)
+        self.allCharacters = [TelevisionCharacter(text: "Big Head", icon: nil),
+                              TelevisionCharacter(text: "Gavin Belsin", icon: nil),
+                              TelevisionCharacter(text: "Russ Hanaman", icon: nil)]
+        self.characters = [TelevisionCharacter(text: "Big Head", icon: Icon(urlString: "BigHeadsImageURL")),
+                           TelevisionCharacter(text: "Gavin Belsin", icon: nil),
+                           TelevisionCharacter(text: "Russ Hanaman", icon: nil)]
     }
 }

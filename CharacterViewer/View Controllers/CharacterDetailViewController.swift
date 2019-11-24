@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CharacterDetailViewControllerDelegate: class {
-    func viewDidLoad(viewController: CharacterDetailViewController, viewModel: CharacterDetailViewModel)
+    func characterDetailViewDidLoad(viewController: CharacterDetailViewController, viewModel: CharacterDetailViewModel)
 }
 
 class CharacterDetailViewController: UIViewController {
@@ -23,7 +23,7 @@ class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let characterDetailViewModel = characterDetailViewModel else { return }
-        coordinatorDelegate?.viewDidLoad(viewController: self, viewModel: characterDetailViewModel)
+        coordinatorDelegate?.characterDetailViewDidLoad(viewController: self, viewModel: characterDetailViewModel)
     }
     
     func updateLabels(with characterDetailViewModel: CharacterDetailViewModel) {

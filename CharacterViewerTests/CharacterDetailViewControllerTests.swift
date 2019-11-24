@@ -40,7 +40,7 @@ class CharacterDetailViewControllerTests: XCTestCase {
 class CharacterDetailViewControllerDelegateMock: CharacterDetailViewControllerDelegate {
     var viewDidLoadCalled = false
     
-    func viewDidLoad(viewController: CharacterDetailViewController, viewModel: CharacterDetailViewModel) {
+    func characterDetailViewDidLoad(viewController: CharacterDetailViewController, viewModel: CharacterDetailViewModel) {
         viewDidLoadCalled  = true
     }
 }
