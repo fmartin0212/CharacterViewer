@@ -15,6 +15,7 @@ enum ImageManagerError: Error {
 
 protocol ImageManaging {
     var networkManager: NetworkManaging { get set }
+    func fetchImage(from url: URL, completion: @escaping (Result<UIImage, ImageManagerError>) -> Void)
 }
 
 class ImageManager: ImageManaging {

@@ -20,11 +20,11 @@ class CharacterDetailViewModel {
         let startingIndex = model.text.index(dashIndex, offsetBy: -1)
         var string = String(model.text.prefix(upTo: startingIndex))
         
-        if let range = string.range(of: "(The Wire)") {
+        if let range = string.range(of: " (The Wire)") {
             string.removeSubrange(range)
         }
         
-        if let range = string.range(of: "(The Simpsons)") {
+        if let range = string.range(of: " (The Simpsons)") {
             string.removeSubrange(range)
         }
         

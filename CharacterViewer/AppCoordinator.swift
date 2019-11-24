@@ -8,33 +8,24 @@
 
 import UIKit
 
-protocol Coordinator {
-    
-}
-
-class AppCoordinator: Coordinator {
+class AppCoordinator {
     let navigationController: UINavigationController
     let app: TelevisionCharacterApp
-    let dependencies: Dependencies
-    
-    struct Dependencies {
-        let networkManager = NetworkManager()
-        var characterManager: TelevisionCharacterManager {
-            return TelevisionCharacterManager(networkManager: networkManager) }
-        var imageManager: ImageManager {
-            return ImageManager(networkManager: networkManager)
-        }
-    }
-    
-    init(endpoint: TelevisionCharacterApp) {
+    var networkManager: NetworkManaging
+    var characterManager: TelevisionCharacterManaging
+    var imageManager: ImageManaging
+
+    init(app: TelevisionCharacterApp) {
         self.navigationController = UINavigationController()
-        self.app = endpoint
-        self.dependencies = Dependencies()
+        self.app = app
+        self.networkManager = NetworkManager()
+        self.characterManager = TelevisionCharacterManager(networkManager: networkManager)
+        self.imageManager = ImageManager(networkManager: networkManager)
     }
     
     func start() {
         guard let characterListViewController = UIStoryboard.characterViewerMain.instantiateViewController(withIdentifier: "CharacterListViewController") as? CharacterListViewController else { return }
-        let characterListViewModel = CharacterListViewModel(characterManager: dependencies.characterManager,
+        let characterListViewModel = CharacterListViewModel(characterManager: characterManager,
                                                             app: app)
         characterListViewController.characterListViewModel = characterListViewModel
         characterListViewController.coordinatorDelegate = self
@@ -57,7 +48,7 @@ extension AppCoordinator: CharacterListViewControllerCoordinatorDelegate {
             guard let detailVC = viewController.children.first as? CharacterDetailViewController else { return }
             detailVC.updateLabels(with: characterDetailViewModel)
             if let imageURL = characterDetailViewModel.imageURL {
-                dependencies.imageManager.fetchImage(from: imageURL) { (result) in
+                imageManager.fetchImage(from: imageURL) { (result) in
                     switch result {
                     case .success(let image):
                         detailVC.updateImageView(with: image)
@@ -89,7 +80,7 @@ extension AppCoordinator: CharacterDetailViewControllerDelegate {
             viewController.updateImageView(with: UIImage(named: "NotFound") ?? UIImage())
             return
         }
-        dependencies.imageManager.fetchImage(from: imageURL) { (result) in
+        imageManager.fetchImage(from: imageURL) { (result) in
             switch result {
             case .success(let image):
                 viewController.updateImageView(with: image)

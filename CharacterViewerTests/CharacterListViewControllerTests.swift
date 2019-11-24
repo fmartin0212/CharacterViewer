@@ -12,7 +12,6 @@ import XCTest
 class CharacterListViewControllerTests: XCTestCase {
 
     var sut: CharacterListViewController!
-    var navController: UINavigationController!
     var coordinatorMock: CharacterListVCCoordinatorDelegateMock! {
         return sut.coordinatorDelegate as? CharacterListVCCoordinatorDelegateMock
     }
@@ -25,13 +24,11 @@ class CharacterListViewControllerTests: XCTestCase {
         let coordinatorDelegateMock = CharacterListVCCoordinatorDelegateMock()
         sut.characterListViewModel = characterListViewModel
         sut.coordinatorDelegate = coordinatorDelegateMock
-        navController = NavigationControllerMock(rootViewController: sut)
         _ = sut.view
     }
 
     override func tearDown() {
         sut = nil
-        navController = nil
     }
     
     func test_sut_ShouldBeTableViewDataSource() {

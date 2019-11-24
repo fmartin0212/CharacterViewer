@@ -24,6 +24,9 @@
 		B76A21CE2389E2D00005D088 /* SimpsonsData.json in Resources */ = {isa = PBXBuildFile; fileRef = B76A21C82389DC190005D088 /* SimpsonsData.json */; };
 		B76A21D02389E5F60005D088 /* ImageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76A21CF2389E5F60005D088 /* ImageManagerTests.swift */; };
 		B76A21D22389EBFA0005D088 /* CharacterListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76A21D12389EBF90005D088 /* CharacterListViewControllerTests.swift */; };
+		B76A21D4238A3DFE0005D088 /* CharacterDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76A21D3238A3DFE0005D088 /* CharacterDetailViewControllerTests.swift */; };
+		B76A21DA238A48A90005D088 /* CharacterDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76A21D9238A48A90005D088 /* CharacterDetailViewModelTests.swift */; };
+		B76A21DC238A48DA0005D088 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76A21DB238A48DA0005D088 /* AppCoordinatorTests.swift */; };
 		B77BE27723860F8F00779BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BE27623860F8F00779BE4 /* AppDelegate.swift */; };
 		B77BE27C23860F8F00779BE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27A23860F8F00779BE4 /* Main.storyboard */; };
 		B77BE28123860F9300779BE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77BE27F23860F9300779BE4 /* LaunchScreen.storyboard */; };
@@ -92,6 +95,9 @@
 		B76A21CC2389E0740005D088 /* TheWireData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TheWireData.json; sourceTree = "<group>"; };
 		B76A21CF2389E5F60005D088 /* ImageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManagerTests.swift; sourceTree = "<group>"; };
 		B76A21D12389EBF90005D088 /* CharacterListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewControllerTests.swift; sourceTree = "<group>"; };
+		B76A21D3238A3DFE0005D088 /* CharacterDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		B76A21D9238A48A90005D088 /* CharacterDetailViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModelTests.swift; sourceTree = "<group>"; };
+		B76A21DB238A48DA0005D088 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		B77BE27323860F8F00779BE4 /* CharacterViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharacterViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77BE27623860F8F00779BE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B77BE27B23860F8F00779BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -225,11 +231,14 @@
 			isa = PBXGroup;
 			children = (
 				B77E782D2389CCFB00DD5727 /* TestMocks.swift */,
-				B76A21CF2389E5F60005D088 /* ImageManagerTests.swift */,
-				B77BE28D23860F9300779BE4 /* Info.plist */,
-				B76A21D12389EBF90005D088 /* CharacterListViewControllerTests.swift */,
+				B76A21DB238A48DA0005D088 /* AppCoordinatorTests.swift */,
 				B77E78292389CCB600DD5727 /* NetworkManagerTests.swift */,
 				B77E782B2389CCCC00DD5727 /* TelevisionCharacterManagerTests.swift */,
+				B76A21CF2389E5F60005D088 /* ImageManagerTests.swift */,
+				B76A21D12389EBF90005D088 /* CharacterListViewControllerTests.swift */,
+				B76A21D9238A48A90005D088 /* CharacterDetailViewModelTests.swift */,
+				B76A21D3238A3DFE0005D088 /* CharacterDetailViewControllerTests.swift */,
+				B77BE28D23860F9300779BE4 /* Info.plist */,
 			);
 			path = CharacterViewerTests;
 			sourceTree = "<group>";
@@ -540,10 +549,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B76A21D4238A3DFE0005D088 /* CharacterDetailViewControllerTests.swift in Sources */,
 				B76A21D22389EBFA0005D088 /* CharacterListViewControllerTests.swift in Sources */,
+				B76A21DA238A48A90005D088 /* CharacterDetailViewModelTests.swift in Sources */,
 				B76A21D02389E5F60005D088 /* ImageManagerTests.swift in Sources */,
 				B77E782A2389CCB600DD5727 /* NetworkManagerTests.swift in Sources */,
 				B77E782C2389CCCC00DD5727 /* TelevisionCharacterManagerTests.swift in Sources */,
+				B76A21DC238A48DA0005D088 /* AppCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
