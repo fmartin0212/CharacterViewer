@@ -46,6 +46,9 @@ extension AppCoordinator: CharacterListViewControllerCoordinatorDelegate {
             navigationController.pushViewController(characterDetailViewController, animated: true)
         } else {
             guard let detailVC = viewController.children.first as? CharacterDetailViewController else { return }
+            if app == .theWire {
+                detailVC.characterImageView.contentMode = .scaleAspectFill
+            }
             detailVC.updateLabels(with: characterDetailViewModel)
             if let imageURL = characterDetailViewModel.imageURL {
                 imageManager.fetchImage(from: imageURL) { (result) in
@@ -75,15 +78,19 @@ extension AppCoordinator: CharacterListViewControllerCoordinatorDelegate {
 
 extension AppCoordinator: CharacterDetailViewControllerDelegate {
     func characterDetailViewDidLoad(viewController: CharacterDetailViewController, viewModel: CharacterDetailViewModel) {
-        viewController.loadViewIfNeeded()
         viewController.updateLabels(with: viewModel)
         guard let imageURL = viewModel.imageURL else {
             viewController.updateImageView(with: UIImage(named: "NotFound") ?? UIImage())
             return
         }
-        imageManager.fetchImage(from: imageURL) { (result) in
+        imageManager.fetchImage(from: imageURL) { [weak self] (result) in
             switch result {
             case .success(let image):
+                if self?.app == .theWire {
+                    DispatchQueue.main.async {
+                        viewController.characterImageView.contentMode = .scaleAspectFill
+                    }
+                }
                 viewController.updateImageView(with: image)
             case .failure(_):
                 viewController.updateImageView(with: UIImage(named: "NotFound") ?? UIImage())
