@@ -25,6 +25,7 @@ import Foundation
 //    }
 //}
 protocol NetworkManaging: class {
+    var session: NetworkSession { get set }
     func fetch(from url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
@@ -35,14 +36,20 @@ enum NetworkError: Error {
 }
 
 class NetworkManager: NetworkManaging {
+    
+    var session: NetworkSession
+    
+    init(session: NetworkSession) {
+        self.session = session
+    }
+    
     func fetch(from url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
+        session.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 completion(.failure(.apiError(error)))
             }
             guard let data = data else { completion(.failure(.corruptedData)) ; return }
             completion(.success(data))
-        }
-        dataTask.resume()
+        }.resume()
     }
 }

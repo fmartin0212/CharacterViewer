@@ -18,6 +18,12 @@ class NavigationControllerMock: UINavigationController {
 }
 
 class NetworkManagerMock: NetworkManaging {
+    var session: NetworkSession
+    
+    init(session: NetworkSession) {
+        self.session = session
+    }
+    
     private struct Constants {
         static let SimpsonsURL = "http://api.duckduckgo.com/?q=simpsons+characters&format=json"
         static let TheWireURL = "http://api.duckduckgo.com/?q=the+wire+characters&format=json"
@@ -74,3 +80,22 @@ class CharacterListViewModelMock: CharacterListViewModel {
                            TelevisionCharacter(text: "Russ Hanaman", icon: nil)]
     }
 }
+
+class URLSessionMock: NetworkSession {
+    func dataTask(with url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkTask {
+        let data = loadJsonFrom(fileName: "TheWireData")
+        completion(data, nil, nil)
+        return NetworkTaskMock()
+    }
+    
+    func loadJsonFrom(fileName: String) -> Data {
+        let path = Bundle.main.path(forResource: fileName, ofType: "json")
+        let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path!))
+        return jsonData
+    }
+}
+
+class NetworkTaskMock: NetworkTask {
+    func resume() {}
+}
+

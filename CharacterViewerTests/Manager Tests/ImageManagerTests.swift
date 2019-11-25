@@ -14,7 +14,7 @@ class ImageManagerTests: XCTestCase {
     var sut: ImageManager!
     
     override func setUp() {
-        let networkManagerMock = NetworkManagerMock()
+        let networkManagerMock = NetworkManagerMock(session: URLSessionMock())
         sut = ImageManager(networkManager: networkManagerMock)
     }
 

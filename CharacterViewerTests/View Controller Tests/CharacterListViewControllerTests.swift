@@ -18,7 +18,7 @@ class CharacterListViewControllerTests: XCTestCase {
     
     override func setUp() {
         sut = UIStoryboard.characterViewerMain.instantiateViewController(withIdentifier: "CharacterListViewController") as? CharacterListViewController
-        let networkManagerMock = NetworkManagerMock()
+        let networkManagerMock = NetworkManagerMock(session: URLSessionMock())
         let tvCharacterManagerMock = TelevisionCharacterManager(networkManager: networkManagerMock)
         let characterListViewModel = CharacterListViewModel(characterManager: tvCharacterManagerMock, app: .simpsons)
         let coordinatorDelegateMock = CharacterListVCCoordinatorDelegateMock()
@@ -44,7 +44,7 @@ class CharacterListViewControllerTests: XCTestCase {
     }
     
     func test_numberOfRowsInSection_ShouldBeOne() {
-        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 43)
     }
     
     func test_DidSelectRow_ShouldDelegateToCoordinator() {

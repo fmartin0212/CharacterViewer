@@ -19,10 +19,10 @@ class AppCoordinatorTests: XCTestCase {
     
     override func setUp() {
         sut = AppCoordinator(app: .simpsons, navigationController: NavigationControllerMock())
-        sut.networkManager = NetworkManagerMock()
+        sut.networkManager = NetworkManagerMock(session: URLSessionMock())
         sut.characterManager = TelevisionCharacterManager(networkManager: sut.networkManager)
         sut.imageManager = ImageManagerMock(networkManagerMock: sut.networkManager)
-        characterManagerMock = TelevisionCharacterManager(networkManager: NetworkManagerMock())
+        characterManagerMock = TelevisionCharacterManager(networkManager: NetworkManagerMock(session: URLSessionMock()))
     }
 
     override func tearDown() {
@@ -79,6 +79,7 @@ class AppCoordinatorTests: XCTestCase {
         sut.searchBar(textDidChange: "Gav", on: listViewController, listViewModel: listViewModel)
         
         XCTAssertEqual(listViewController.characterListViewModel?.characters.count, 1)
+        XCTAssertEqual(listViewController.characterListViewModel?.characters.first?.text, "Gavin Belsin")
     }
     
     func test_characterDetailViewDidLoad_ShouldCallUpdateDetailViewControllerViews() {

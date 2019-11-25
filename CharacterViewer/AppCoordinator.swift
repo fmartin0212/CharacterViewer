@@ -18,7 +18,7 @@ class AppCoordinator {
     init(app: TelevisionCharacterApp, navigationController: UINavigationController) {
         self.app = app
         self.navigationController = navigationController
-        self.networkManager = NetworkManager()
+        self.networkManager = NetworkManager(session: URLSession.shared)
         self.characterManager = TelevisionCharacterManager(networkManager: networkManager)
         self.imageManager = ImageManager(networkManager: networkManager)
     }
@@ -75,6 +75,7 @@ extension AppCoordinator: CharacterListViewControllerCoordinatorDelegate {
 
 extension AppCoordinator: CharacterDetailViewControllerDelegate {
     func characterDetailViewDidLoad(viewController: CharacterDetailViewController, viewModel: CharacterDetailViewModel) {
+        viewController.loadViewIfNeeded()
         viewController.updateLabels(with: viewModel)
         guard let imageURL = viewModel.imageURL else {
             viewController.updateImageView(with: UIImage(named: "NotFound") ?? UIImage())

@@ -14,7 +14,7 @@ class TelevisionCharacterManagerTests: XCTestCase {
     var sut: TelevisionCharacterManager!
     
     override func setUp() {
-        let networkworkManagerMock = NetworkManagerMock()
+        let networkworkManagerMock = NetworkManagerMock(session: URLSessionMock())
         sut = TelevisionCharacterManager(networkManager: networkworkManagerMock)
     }
     
